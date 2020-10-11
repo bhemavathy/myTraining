@@ -1,0 +1,12 @@
+//Positive Case:
+1. Entering input1 and input2 as number,operator + which gives output by adding the two input numbers.
+2. Entering input1 and input2 as number,operator - which gives output by subtracting the two input numbers.
+3. Entering input1 and input2 as number,operator * which gives output by multiplying the two input numbers .
+4. Entering input1 and input2 as number,operator / which gives output by dividing the numbers.
+5. Entering input1 and input2 as number,operator % which gives output by calculating the percentage for input1(obtained value) w.r.to input2(total value).
+6. while giving input to operator--If entering other than operators in the option- getting message to select option from the list.
+
+
+//Negative cases:
+1. User cannot give characters as input- Getting input mismatchException--No message to user to give input as only numbers
+2. If user not selects the correct operator- just message is given but not asking to choose the right option by mentioning correct options
