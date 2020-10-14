@@ -6,6 +6,8 @@ public class CalculatorMain {
 
 	public static void main(String[] args) {
 		int exit;
+		
+		
 		// TODO Auto-generated method stub
 		do {
 			double input1, input2;
@@ -20,8 +22,10 @@ public class CalculatorMain {
 			String operatorStr = scanner.next();			
 			operator = operatorStr.charAt(0);
 			Calculator calculator = new Calculator();
+			CalcFromExtInput reader= new CalcFromExtInput(); 
 
 			if (operatorStr.length() == 1) {
+				
 				calculator.calculateWithInput(input1, input2, operator);
 			} else {
 				System.out.println("Operator is not matched");

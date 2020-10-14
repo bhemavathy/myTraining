@@ -1,4 +1,4 @@
-package mytraining;
+package CalcFromExternalInput;
 
 public class Calculator {
 
@@ -37,6 +37,7 @@ public class Calculator {
 			System.out.println("Please enter the operator from option");
 			break;
 		}
-return output;
+		return output;
+
 	}
 }

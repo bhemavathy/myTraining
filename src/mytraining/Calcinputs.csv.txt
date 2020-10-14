@@ -1,0 +1,2 @@
+Num1	Operator	Num2	result
+2.5	+	3.5	
