@@ -1,56 +1,61 @@
 package CalcFromExternalInput;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.List;
 
 public class GenerateRandom {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		String path = "F:\\Random.txt";
-		Random rg = new Random();
-		PrintWriter pw = null;
-		try {
-			pw = new PrintWriter(new FileOutputStream(path));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String path = "F:\\Random.csv";
+
+		WriteRandom wr = new WriteRandom();
+
+		wr.write();
+
+		ReadFile rf = new ReadFile();
+
+		List<InputReturnValues> inputslist = rf.readinputfile(path);
+
+		WriteFile wf = new WriteFile();
+
+		for (InputReturnValues inpValues : inputslist) {
+
+			double output = calculateWithInput(inpValues.getInput1(),
+					inpValues.getInput2(), inpValues.getChar());
+
+			wf.writeOutputFile(inpValues, output);
+
 		}
 
-		int[] num = new int[1000];
-		for (int i = 1; i < 1000; i++) {
-			num[i] = rg.nextInt();
+	}
 
-			pw.println(num[i]);
-		}
+	public static double calculateWithInput(double value1, double value2,
+			char operator1) {
 
-		pw.close();
-
-		BufferedInputStream br = null;
-		try {
-			br = new BufferedInputStream(new FileInputStream(path));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		double output = 0;
+		Calculate calculate = new Calculate();
+		switch (operator1) {
+		case '+':
+			output = calculate.add(value1, value2);
+			break;
+		case '-':
+			output = calculate.sub(value1, value2);
+			break;
+		case '*':
+			output = calculate.multiply(value1, value2);
+			break;
+		case '/':
+			output = calculate.divide(value1, value2);
+			break;
+		case '%':
+			output = calculate.percentage(value1, value2);
+			break;
+		default:
+			System.out.println("Please enter the correct operator");
+			break;
 		}
-		Scanner sc = new Scanner(br, "UTF-8");
-		while (sc.hasNextLine()) {
-			String line = sc.nextLine();
-			System.out.println(line);
-		}
-		try {
-			br.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		return output;
 	}
 
 }
