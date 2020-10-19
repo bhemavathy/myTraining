@@ -37,7 +37,6 @@ public class WriteRandom {
 			bw.append(inputs);
 
 		}
-
 		try {
 
 			bw.close();

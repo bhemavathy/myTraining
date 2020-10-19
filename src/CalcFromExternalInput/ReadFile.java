@@ -9,7 +9,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ReadFile {
@@ -40,11 +43,14 @@ public class ReadFile {
 
 					System.out.println("Input1 =" + calcin[0] + ",Operator="
 							+ calcin[2] + ", Input2=" + calcin[1] + "]");
+					
 					InputReturnValues irv = new InputReturnValues();
 					irv.setInput1(input1);
 					irv.setInput2(input2);
-					irv.setChar(operator);
+					irv.setOperator(operator);
 					list.add(irv);
+					
+					
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -66,6 +72,12 @@ public class ReadFile {
 		return list;
 	}
 
+	
+
+
+	
+	 
+	 
 	public static void read(String path) {
 		BufferedInputStream br = null;
 		try {

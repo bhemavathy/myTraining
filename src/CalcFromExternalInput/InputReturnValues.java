@@ -1,5 +1,7 @@
 package CalcFromExternalInput;
 
+
+
 public class InputReturnValues {
 	private double input1;
 	private double input2;
@@ -8,24 +10,23 @@ public class InputReturnValues {
 	public double getInput1() {
 		return input1;
 	}
-
-	public void setInput1(double value1) {
-		this.input1 = value1;
+	public void setInput1(double input1) {
+		this.input1 = input1;
 	}
-
 	public double getInput2() {
 		return input2;
 	}
-
-	public void setInput2(double value2) {
-		this.input2 = value2;
+	public void setInput2(double input2) {
+		this.input2 = input2;
 	}
-
-	public char getChar() {
+	public char getOperator() {
 		return operator;
 	}
-
-	public void setChar(char op) {
-		this.operator = op;
+	public void setOperator(char operator) {
+		this.operator = operator;
 	}
+	
+	
+
+
 }
